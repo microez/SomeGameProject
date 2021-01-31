@@ -7,6 +7,7 @@ namespace SomeGameP.Ops
 {
     class GamerManager : IGamerService
     {
+        //      here, it sets validation service what we wanted to use
         IValidationService _validationService;
         public GamerManager(IValidationService validationService)
         {
@@ -14,7 +15,7 @@ namespace SomeGameP.Ops
         }
 
 
-
+        //      and _validationService is going to process with our service
         public void Add(Gamer gamer)
         {
             if (_validationService.Validate(gamer)==true)
@@ -27,6 +28,9 @@ namespace SomeGameP.Ops
             }
         }
 
+
+
+
         public void Delete(Gamer gamer)
         {
             Console.WriteLine("Kayıt silindi.");
@@ -36,6 +40,8 @@ namespace SomeGameP.Ops
         {
             Console.WriteLine("Kayıt güncellendi.");
         }
+
+
         public void List()
         {
             List<Gamer> usrs = new List<Gamer>() { ku1, ku2, ku3, ku4, ku5 };
@@ -49,6 +55,8 @@ namespace SomeGameP.Ops
             Console.WriteLine("*Liste sonu*");
         }
 
+
+        //all gamers
         Gamer ku1 = new Gamer() { Id = 1, FirstName = "Doğan", LastName = "Kül", BirthDate = 1999, TCNo = "58299201158" };
         Gamer ku2 = new Gamer() { Id = 2, FirstName = "Zeynep", LastName = "Avşar", BirthDate = 1987, TCNo = "30018475619" };
         Gamer ku3 = new Gamer() { Id = 3, FirstName = "Eray", LastName = "Kazan", BirthDate = 2001, TCNo = "11857399244" };

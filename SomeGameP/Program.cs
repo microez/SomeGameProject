@@ -12,23 +12,29 @@ namespace SomeGameP
         static void Main(string[] args)
         {
 
+            GamerManager gamerManager = new GamerManager(new UserValidation());
             Items items = new Items();
             items.ListItems();
             Console.WriteLine();
 
             Console.WriteLine("(i) Satın alımlarınız, yoğunluk nedeniyle 10 dakika içerisinde kullanılabilir olacaktır. (i)");
-            //Gamers oko = new Gamers();
-            //oko.List()}
+            //          list of registered Gamers method
+            //Console.WriteLine();
+            //gamerManager.List();
+
+
+            //          spaces for legibility
             Console.WriteLine();
             Console.WriteLine();
 
-            GamerManager gamerManager = new GamerManager(new UserValidation());
+
+            
             gamerManager.Add(new Gamer
             {
                 Id = 7,
                 FirstName = "DON",
                 LastName = "OMAR",
-                BirthDate = 2002
+                BirthDate = 2002    //accepted value is 2003
             });
 
         }
